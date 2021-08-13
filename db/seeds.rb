@@ -6,9 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-50.times do |article|
-  Article.new(
-    title: ,
-    content:
+puts "starting seed..."
+
+10.times do |article|
+  article = Article.new(
+    title: Faker::TvShows::FamilyGuy.location,
+    content: Faker::TvShows::FamilyGuy.quote
   )
+  article.save
 end
+
+puts "ending seed..."
